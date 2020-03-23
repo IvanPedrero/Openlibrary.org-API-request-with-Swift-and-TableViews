@@ -30,12 +30,13 @@ class BookDetailViewController: UIViewController {
     
     func setDetails(){
         // Add the name.
-        bookNameLabel.text = bookName
+        bookNameLabel.text = "Title: "+bookName
         
         // Add the authors.
         if (bookAuthors.count == 0) {
             bookNameLabel.text = "No author information available."
         }else{
+            bookAuthorsLabel.text = "Author:\n"
             for author in bookAuthors {
                 bookAuthorsLabel.text?.append(author+"\n")
             }

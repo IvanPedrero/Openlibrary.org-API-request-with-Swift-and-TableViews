@@ -34,6 +34,9 @@ class BookAddingViewController: UIViewController {
         // Hide the add button.
         addButton.isHidden = true
         
+        // Hide the keyboard.
+        dismissKeyboard()
+        
         /* An example of this would be:
          978-84-376-0494-7      -> With dashes
          0061558230             -> Multiple authors, no cover
@@ -207,6 +210,15 @@ class BookAddingViewController: UIViewController {
         
         //Hide the button.
         addButton.isHidden = true
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func dismissKeyboard(){
+    //Causes the view to resign from the status of first responder.
+    view.endEditing(true)
     }
     
 
